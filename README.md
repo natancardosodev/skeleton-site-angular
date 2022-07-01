@@ -2,26 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
-## Development server
+## Instalação do Projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+npm i -g @angular/cli@14
+ng new skeleton-site-angular
+cd skeleton-site-angular
+code .
+cd src/app
+mkdir core features shared
+cd features
+mkdir pages services
+cd pages
+ng g m --name=home --module=app --route=home --routing
+ng g m --name=not-found --module=app --route=not-found --routing
+```
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Abra `src/app/app.component.html` e substitua por `<router-outlet></router-outlet>`
+- Crie um arquivo `.gitkeep` e coloque nas pastas que estão por enquanto vazias

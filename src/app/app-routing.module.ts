@@ -1,10 +1,24 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+    { path: '', loadChildren: () => import('./features/pages/home/home.module').then(m => m.HomeModule) },
+    {
+        path: '**',
+        loadChildren: () =>
+            import('./features/pages/not-found/not-found.module').then(
+                (m) => m.NotFoundModule
+            )
+    }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(routes, {
+            scrollPositionRestoration: 'enabled',
+            relativeLinkResolution: 'corrected'
+        })
+    ],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
