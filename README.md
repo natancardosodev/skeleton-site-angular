@@ -1,8 +1,27 @@
-# SkeletonSiteAngular
+# Skeleton Angular Basic
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
-## Instalação do Projeto
+## Pré-requsitos
+
+-   Node 12+
+-   npm 5+
+
+## Instalação do projeto
+
+```bash
+npm install
+```
+
+## Execução do projeto
+
+```bash
+npm run start
+```
+
+-   Acesse http://localhost:4200
+
+## Configurando o Projeto
 
 ```bash
 npm i -g @angular/cli@14
@@ -18,6 +37,7 @@ ng g m --name=home --module=app --route=home --routing
 ng g m --name=not-found --module=app --route=not-found --routing
 ```
 
+-   Pode alterar o path da rota em `AppRoutingModule`
 -   Abra `src/app/app.component.html` e substitua por `<router-outlet></router-outlet>`
 -   Crie um arquivo `.gitkeep` e coloque nas pastas que estão por enquanto vazias
 
@@ -40,4 +60,4 @@ npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslin
 "lint:fix": "npm run eslint:fix && npm run stylelint:fix"
 ```
 
--   Rode o `npm run lint:fix` para testar
+-   Rode o `npm run lint:fix` para corrigir e verificar os erros.
