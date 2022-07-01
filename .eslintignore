@@ -1,0 +1,4 @@
+**/*.spec.ts
+src/app/app.component.html
+src/app/app.component.scss
+src/static/js
