@@ -26,7 +26,8 @@ ng g m --name=not-found --module=app --route=not-found --routing
 npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier prettier prettier-eslint stylelint stylelint-config-sass-guidelines
 ```
 
--   Adicione no projeto .eslintignore, .eslintrc.js, .prettierrc.json e .stylelintrc.json conforme este projeto
+-   Adicione no projeto [.eslintignore](.eslintignore), .eslintrc.js, .prettierrc.json e .stylelintrc.json conforme este
+    projeto
 -   Adicione o `settings.json` em .vscode conforme este projeto.
 -   Adicione nos scripts do package.json os comandos abaixo.
 
