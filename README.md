@@ -21,7 +21,8 @@ npm run start
 
 -   Acesse http://localhost:4200
 
-## Documentação do projeto
+## Documentação do projeto e Instruções Angular
 
--   [Iniciando um novo projeto com Angular](/docs/iniciando-novo-projeto.md)
+-   [Iniciando um novo projeto](/docs/iniciando-novo-projeto.md)
 -   [Estrutura da aplicação](/docs/estrutura-da-aplicacao.md)
+-   [Diretivas](/docs/diretivas-angular.md)

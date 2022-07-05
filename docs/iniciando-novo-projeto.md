@@ -19,6 +19,21 @@ ng g m --name=not-found --module=app --route=not-found --routing
 -   Pode alterar o path da rota em `AppRoutingModule`
 -   Abra `src/app/app.component.html` e substitua por `<router-outlet></router-outlet>`
 -   Crie um arquivo `.gitkeep` e coloque nas pastas que estão por enquanto vazias
+-   Adicionar no compilerOptions do `tsconfig.json`:
+
+```json
+"paths": {
+      "@core/*": [
+        "./src/app/core/*"
+      ],
+      "@features/*": [
+        "./src/app/features/*"
+      ],
+      "@shared/*": [
+        "./src/app/shared/*"
+      ]
+    },
+```
 
 ## Adicionando Prettier, ESLint e Stylelint ao projeto
 
@@ -26,8 +41,7 @@ ng g m --name=not-found --module=app --route=not-found --routing
 npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier prettier prettier-eslint stylelint stylelint-config-sass-guidelines
 ```
 
--   Adicione no projeto [.eslintignore](/.eslintignore), .eslintrc.js, .prettierrc.json e .stylelintrc.json conforme
-    este projeto
+-   Adicione no projeto .eslintignore, .eslintrc.js, .prettierrc.json e .stylelintrc.json conforme este projeto
 -   Adicione o `settings.json` em .vscode conforme este projeto.
 -   Adicione nos scripts do package.json os comandos abaixo.
 
