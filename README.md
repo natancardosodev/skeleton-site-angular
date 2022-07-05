@@ -1,6 +1,6 @@
-# Skeleton Angular Basic
+# Skeleton Site Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
+Projeto estrutural para uma aplicação básica com Angular 14.
 
 ## Pré-requsitos
 
@@ -21,6 +21,7 @@ npm run start
 
 -   Acesse http://localhost:4200
 
-## Outros tópicos
+## Documentação do projeto
 
 -   [Iniciando um novo projeto com Angular](/docs/iniciando-novo-projeto.md)
+-   [Estrutura da aplicação](/docs/estrutura-da-aplicacao.md)
