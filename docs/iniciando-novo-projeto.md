@@ -14,6 +14,9 @@ mkdir pages services
 cd pages
 ng g m --name=home --module=app --route=home --routing
 ng g m --name=not-found --module=app --route=not-found --routing
+cd ../../core
+mkdir components configs enums interceptor interfaces services utils s
+tatic
 ```
 
 -   Pode alterar o path da rota em `AppRoutingModule`

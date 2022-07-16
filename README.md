@@ -4,8 +4,8 @@ Projeto estrutural para uma aplicação básica com Angular 14.
 
 ## Pré-requsitos
 
--   Node 12+
--   npm 5+
+-   Node 14
+-   npm 6
 
 ## Instalação do projeto
 

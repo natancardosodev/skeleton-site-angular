@@ -8,8 +8,8 @@
       "@core/*": [
         "./src/app/core/*"
       ],
-      "@feature/*": [
-        "./src/app/feature/*"
+      "@features/*": [
+        "./src/app/features/*"
       ],
       "@shared/*": [
         "./src/app/shared/*"
