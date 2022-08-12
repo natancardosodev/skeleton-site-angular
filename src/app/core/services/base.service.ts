@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, take } from 'rxjs/operators';
@@ -67,7 +68,7 @@ export abstract class BaseService {
             take(1),
             catchError((erro: HttpErrorResponse) => {
                 isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
-                return throwErrorAPI();
+                return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
     };
@@ -83,7 +84,7 @@ export abstract class BaseService {
             take(1),
             catchError((erro: HttpErrorResponse) => {
                 isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
-                return throwErrorAPI();
+                return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
     };
@@ -99,7 +100,7 @@ export abstract class BaseService {
             take(1),
             catchError((erro: HttpErrorResponse) => {
                 isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
-                return throwErrorAPI();
+                return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
     };
@@ -115,7 +116,7 @@ export abstract class BaseService {
             take(1),
             catchError((erro: HttpErrorResponse) => {
                 isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
-                return throwErrorAPI();
+                return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
     };
@@ -130,7 +131,7 @@ export abstract class BaseService {
             take(1),
             catchError((erro: HttpErrorResponse) => {
                 isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
-                return throwErrorAPI();
+                return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
     };
@@ -152,7 +153,7 @@ export abstract class BaseService {
             take(1),
             catchError((erro: HttpErrorResponse) => {
                 isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
-                return throwErrorAPI();
+                return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
     };

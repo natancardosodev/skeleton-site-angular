@@ -22,10 +22,6 @@ export class UrlUtilService {
         return `${env}.${uf}`;
     }
 
-    public getUrlSigfacil(isInterno = false): string {
-        return `https://${window.location.host}${isInterno ? '/sigfacil/' : ''}`;
-    }
-
     public montarUrlApi(
         resource: string,
         parameters?: Record<string, string>,
@@ -64,27 +60,6 @@ export class UrlUtilService {
         }
 
         return `?${arrayParametro.join('&')}`;
-    }
-
-    /**
-     *
-     * @static
-     * @param {string} targetPath
-     * @memberof UrlUtilService
-     */
-    public redirectToLogin(): void {
-        const urlAtual = window.location.href;
-        window.location.href = `${this.getUrlApiBase()}/redirect?url=${urlAtual}`;
-    }
-
-    /**
-     * @static
-     * @returns {string}
-     * @memberof UrlUtilService
-     */
-    public redirectToLogout(): string {
-        const urlAtual = window.location.href;
-        return `${this.getUrlApiBase()}/redirect/logout?url=${this.getUrlApiBase()}logout?url=${urlAtual}`;
     }
 
     public montarUrlArray(resource: string, parameters: Record<string, Array<string>>): string {

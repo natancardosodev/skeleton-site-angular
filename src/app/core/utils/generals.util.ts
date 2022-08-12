@@ -33,6 +33,15 @@ export function cleanParams(params: Record<string, any>): any {
     return params;
 }
 
+export function removeEmpty(obj: any): any {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    Object.keys(obj).forEach(function (key) {
+        (obj[key] && typeof obj[key] === 'object' && removeEmpty(obj[key])) ||
+            ((obj[key] === '' || obj[key] === null) && delete obj[key]);
+    });
+    return obj;
+}
+
 export function idGenerator(label: string, idExtra?: number): string {
     if (label === undefined) {
         const radomNumber = Math.floor(Math.random() * 100);
@@ -50,6 +59,6 @@ export function idGenerator(label: string, idExtra?: number): string {
         .toLowerCase();
 }
 
-export function throwErrorAPI(): Observable<never> {
-    return throwError(new Error('Erro da API'));
+export function throwErrorAPI(msg?: string): Observable<never> {
+    return msg ? throwError(msg) : throwError(new Error('Erro da API'));
 }
