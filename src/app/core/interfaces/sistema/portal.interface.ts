@@ -4,7 +4,7 @@ export interface LinkInterface extends UfsLiberadasInterface {
     label: string;
     router?: string;
     link?: string;
-    assetsSigfacil?: string;
+    urlAssets?: string;
     action?: string;
     input?: Array<InputInterface>;
     icon?: string;
@@ -27,7 +27,7 @@ export interface MenuInterface extends UfsLiberadasInterface {
     link?: string;
     router?: string;
     customModal?: CustomModalInterface;
-    assetsSigfacil?: string;
+    urlAssets?: string;
     button?: string;
     subLinks?: Array<LinkInterface> | Array<MenuInterface>;
     ufsEspecificas?: Array<string>;
@@ -44,7 +44,7 @@ export interface FilteredItemMenu extends UfsLiberadasInterface {
     link?: string;
     router?: string;
     customModal?: CustomModalInterface;
-    assetsSigfacil?: string;
+    urlAssets?: string;
     button?: string;
     subLinks?: Array<LinkInterface> | Array<MenuInterface>;
     hiddenInputs?: Array<HiddenInputInterface>;
@@ -66,10 +66,10 @@ export interface MenusInterface {
     servicosAdicionais: Array<LinkInterface | MenuInterface>;
 }
 
-export interface DadosSigfacilInterface {
+export interface DadosPortalInterface {
     uf?: string;
     estado: string;
-    sigfacil: string;
+    portal: string;
     url: string;
     urlPortal?: string;
     navbar: Array<LinkInterface>;

@@ -87,7 +87,7 @@ public getModulos(): Observable<Array<Menu>> {
 ```
 
 -   **Services** - Esse diretório de services abrange serviços que norteiam toda a aplicação.
-    -   **AssetsService** - Utilizado apenas quando precisa-se consumir algum json do Assets Sigfacil, nossa CDN de
+    -   **AssetsService** - Utilizado apenas quando precisa-se consumir algum json do Assets Portal, nossa CDN de
         arquivos estáticos.
     -   **BaseService** - Abstração para partes genéricas dos services
     -   **CommonService** - Mapear todos os endpoints GET sem query parameters. Geralmente são os combobox.

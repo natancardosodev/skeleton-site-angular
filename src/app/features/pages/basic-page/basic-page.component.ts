@@ -85,7 +85,7 @@ export class BasicPageComponent implements OnInit {
     public render(currentComponent: any): void {
         const dadosInput: DadosBasicPageInterface = {
             uf: this.appConfig.uf,
-            nomePortal: this.appConfig.dadosSigfacil.value?.sigfacil
+            nomePortal: this.appConfig.dadosPortal.value?.portal
         };
 
         this.container.clear();

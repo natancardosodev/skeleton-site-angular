@@ -11,7 +11,7 @@ import { SolicitacaoService } from '@features/services/solicitacao.service';
 export class AssetsViewComponent implements OnInit {
     public path: string;
     public formatFile: string;
-    public assetsSigfacil: string;
+    public urlAssets: string;
     public isImage: boolean;
     public base64: string;
     public breadcrumb: Array<any>;
@@ -43,7 +43,7 @@ export class AssetsViewComponent implements OnInit {
     }
 
     public asset(url: string): string {
-        return `${this.assetsSigfacil}${url}`;
+        return `${this.urlAssets}${url}`;
     }
 
     private convertToBase64(): void {

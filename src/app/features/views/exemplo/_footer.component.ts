@@ -7,18 +7,18 @@ import { Component } from '@angular/core';
             <div class="content">
                 <span class="copyright">
                     <p>
-                        <span>PREFEITURA DE MACEIÓ</span>
+                        <span>ENTIDADE</span>
                     </p>
                 </span>
                 <span class="endereco">
                     <p>
-                        Rua Sá e Albuquerque, 235, Jaraguá, Maceió/AL&nbsp;&nbsp;CEP 57022-180<br />
-                        <strong>Telefone: (82) 3312-5860</strong>
+                        Logradouro, 232, Centro, Cidade/UF&nbsp;&nbsp;CEP 4545-455<br />
+                        <strong>Telefone: (82) 78768677</strong>
                     </p>
                     <ul class="midias">
                         <li>
                             <a
-                                href="http://www.youtube.com/prefeiturademaceio"
+                                href="http://www.youtube.com/prefeiturade"
                                 class="youtube"
                                 target="_blank"
                                 title="Curta nosso canal"
@@ -28,7 +28,7 @@ import { Component } from '@angular/core';
                         </li>
                         <li>
                             <a
-                                href="https://www.facebook.com/PrefeituraDeMaceio"
+                                href="https://www.facebook.com/PrefeituraDe"
                                 class="facebook"
                                 target="_blank"
                                 title="facebook"
@@ -37,7 +37,7 @@ import { Component } from '@angular/core';
                             </a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/prefmaceio" class="twitter" target="_blank" title="twitter">
+                            <a href="https://twitter.com/pref" class="twitter" target="_blank" title="twitter">
                                 twitter
                             </a>
                         </li>
