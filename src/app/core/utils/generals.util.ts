@@ -3,6 +3,8 @@ import { MensagensEnum } from '@core/enums/sistema/mensagens.enum';
 import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
+declare const gtag: (arg0: string, arg1: string, arg2: { event_label: string }) => void;
+
 export function delay(ms: number): Promise<any> {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -27,6 +29,22 @@ export function cleanParams(params: Record<string, any>): any {
     return params;
 }
 
+export function removeEmpty(obj: Record<string, any>): any {
+    Object.keys(obj).forEach(function (key) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        (obj[key] && typeof obj[key] === 'object' && removeEmpty(obj[key])) ||
+            ((obj[key] === '' || obj[key] === null) && delete obj[key]);
+    });
+    return obj;
+}
+
+export function trackGAnalytics(label: string) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    gtag('event', 'select_content', {
+        event_label: label
+    });
+}
+
 export function idGenerator(label: string, idExtra?: number): string {
     if (label === undefined) {
         const radomNumber = Math.floor(Math.random() * 100);
@@ -45,7 +63,8 @@ export function idGenerator(label: string, idExtra?: number): string {
 }
 
 export function throwErrorAPI(msg?: string): Observable<never> {
-    return msg ? throwError(msg) : throwError(new Error('Erro da API'));
+    const err = msg ? new Error(msg) : new Error('Erro da API');
+    return throwError(() => err);
 }
 
 export function generateQueryParamsByObject(obj: Record<any, any>): string {

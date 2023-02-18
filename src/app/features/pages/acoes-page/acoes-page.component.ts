@@ -10,7 +10,7 @@ import {
 } from '@core/interfaces/pagina/acoes-pages.interface';
 import { idGenerator, isNullOrUndefined } from '@core/utils/generals.util';
 import { AppConfigService } from '@core/static/app-config.service';
-import { HiddenInputInterface, MenuInterface } from '@core/interfaces/sistema/sigfacil.interface';
+import { HiddenInputInterface, MenuInterface } from '@core/interfaces/sistema/portal.interface';
 import { AcoesFactory } from '@core/static/acoes/acoes-factory';
 
 @Component({
@@ -60,7 +60,7 @@ export class AcoesPageComponent implements OnInit {
     ngOnInit(): void {}
 
     public assets(url: string): string {
-        return this.appConfig.assetsSigfacil + url;
+        return this.appConfig.urlAssets + url;
     }
 
     public idGen(label: string, extra?: number) {
@@ -68,8 +68,8 @@ export class AcoesPageComponent implements OnInit {
     }
 
     public getUrlPortal(router = ''): string {
-        if (this.appConfig.dadosSigfacil.value) {
-            return `${this.appConfig.dadosSigfacil.value.urlPortal}${router}`;
+        if (this.appConfig.dadosPortal.value) {
+            return `${this.appConfig.dadosPortal.value.urlPortal}${router}`;
         }
         return '';
     }

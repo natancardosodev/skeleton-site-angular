@@ -9,22 +9,15 @@ import { Component } from '@angular/core';
         <div class="modal-body">
             <h5 class="modal-title">Sobre o Portal SLIM</h5>
             <p class="text-justify">
-                O Slim é um portal de licenciamento integrado do município de Maceió, voltado aos empreendedores e
-                empresários de qualquer porte para emissão das licenças, sanitária e ambiental, necessárias para o
-                exercício de atividades econômicas. Estas licenças serão fornecidas pela Vigilância Sanitária de Maceió
-                – VISA e pela Secretaria de Desenvolvimento Territorial e Meio Ambiente – SEDET, respectivamente.
-            </p>
-            <p class="text-justify">
-                Esta ferramenta busca proporcionar facilidade, agilidade e desburocratização aos processos de
-                licenciamento para o funcionamento de empresas no Município. As atividades consideradas "Nível Risco I"
-                ambiental e sanitário, estarão dispensadas do licenciamento municipal. Para as atividades econômicas
-                consideradas "Nível de Risco II", basta preencher os dados solicitados, fazer o upload da documentação
-                exigida e concordar com os Termos de Ciência e Responsabilidade. As licenças serão emitidas
-                automaticamente, sem a necessidade de vistoria prévia. Já para atividades econômicas de "Nível de Risco
-                III", após a inclusão dos projetos e documentações necessárias, o processo passará por uma análise
-                técnica e vistoria prévia. Todo o trâmite poderá ser acompanhado de forma online e, ao final, as
-                licenças serão emitidas pelo sistema e poderão ser impressas pelo próprio requerente, com intuito de
-                garantir transparência e sustentabilidade ao processo.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac arcu in libero sagittis
+                efficitur. Etiam eleifend condimentum enim feugiat bibendum. Fusce turpis est, porta in tortor a,
+                lacinia commodo purus. Aliquam quis tincidunt felis, at feugiat lectus. Vestibulum vulputate sem porta
+                commodo malesuada. Quisque sit amet risus ultrices, facilisis arcu eu, egestas purus. Cras aliquet,
+                lorem sit amet pellentesque lobortis, eros eros pretium risus, id pharetra nisl lacus hendrerit elit.
+                Mauris vel eros dui. Integer id facilisis ipsum, vel congue neque. In condimentum, purus ut tempus
+                placerat, ante magna commodo massa, id ornare mi lectus non augue. Curabitur mattis lectus eu lectus
+                efficitur finibus. Fusce vel ipsum ex. Suspendisse aliquam metus ut arcu finibus, ac venenatis lectus
+                consectetur.
             </p>
         </div>
     `

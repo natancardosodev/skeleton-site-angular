@@ -47,10 +47,10 @@
             ></a>
             <span class="br-divider sm"></span>
         </div>
-        <div *ngIf="item.assetsSigfacil" class="acoes-page__primary-link__item">
+        <div *ngIf="item.urlAssets" class="acoes-page__primary-link__item">
             <a
                 [routerLink]="'/view'"
-                [queryParams]="{ path: item.assetsSigfacil }"
+                [queryParams]="{ path: item.urlAssets }"
                 class="acoes-page__primary-link__item__linkAcao"
                 [id]="idGen(item.label)"
                 >{{ item.label }}<i class="fas fa-chevron-right"></i>

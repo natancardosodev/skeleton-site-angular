@@ -1,4 +1,4 @@
-import { MenuInterface, UfsLiberadasInterface } from '../sistema/sigfacil.interface';
+import { MenuInterface, UfsLiberadasInterface } from '../sistema/portal.interface';
 
 export interface AcoesPageInterface {
     title: string;

@@ -5,7 +5,7 @@ export const environment: IEnvironment = {
     uri: {
         api: 'http://localhost:3000',
         oauth: 'https://homologacao-autenticacao.voxtecnologia.com.br',
-        projeto: 'sigfacil',
+        projeto: 'portal',
         subDomain: 'homologacao'
     }
 };

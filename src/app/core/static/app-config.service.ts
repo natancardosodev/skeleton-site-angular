@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import {
-    DadosSigfacilInterface,
+    DadosPortalInterface,
     FilteredItemMenu,
     LinkInterface,
     MenuInterface,
     MenusInterface
-} from '@core/interfaces/sistema/sigfacil.interface';
+} from '@core/interfaces/sistema/portal.interface';
 import { producao, uf } from '@core/configs/mapeamento-servicos';
 
 import { environment } from 'src/environments/environment';
@@ -20,9 +20,9 @@ import { AcoesFactory } from './acoes/acoes-factory';
 export class AppConfigService {
     public uf: string;
     public subDomain: string;
-    public assetsSigfacil: string;
+    public urlAssets: string;
     public menus: MenusInterface;
-    public dadosSigfacil: BehaviorSubject<DadosSigfacilInterface> = new BehaviorSubject(null);
+    public dadosPortal: BehaviorSubject<DadosPortalInterface> = new BehaviorSubject(null);
     public _acoesFactory: AcoesFactory;
     public allMenus: BehaviorSubject<Array<MenuInterface>> = new BehaviorSubject(null);
 
@@ -91,9 +91,5 @@ export class AppConfigService {
                 return { ...item, links };
             })
         );
-    }
-
-    private setUrlPortal(urlSigfacil: string): string {
-        return `https://${this.subDomain}.${urlSigfacil}`;
     }
 }
