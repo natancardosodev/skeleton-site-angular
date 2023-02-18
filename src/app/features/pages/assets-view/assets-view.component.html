@@ -1,0 +1,38 @@
+<ng-container *ngIf="formatFile && !isLoading">
+    <div class="container-internal assets_view-class">
+        <img [src]="asset(path)" [alt]="path" *ngIf="isImage" />
+        <object
+            *ngIf="formatFile === '.pdf' && base64"
+            [data]="base64 | safe"
+            width="896"
+            height="600"
+            style="border: none"
+        ></object>
+        <div class="d-flex justify-content-end" *ngIf="formatFile === '.pdf' && base64">
+            <button
+                class="br-button primary mt-3 ml-sm-3"
+                name="baixar arquivo"
+                role="button"
+                aria-label="Baixar"
+                (click)="downloadFile()"
+            >
+                <i class="fas fa-download"></i> Baixar
+            </button>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="isLoading">
+    <div class="container-internal assets_view-class">
+        <ngx-skeleton-loader
+            [theme]="{ width: '896px', height: '600px' }"
+            count="1"
+            appearance="line"
+        ></ngx-skeleton-loader>
+    </div>
+    <div class="d-flex justify-content-end">
+        <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+    </div>
+</ng-container>
+<div class="d-flex justify-content-end">
+    <button backButton><i class="fas fa-chevron-left mr-2"></i> VOLTAR</button>
+</div>

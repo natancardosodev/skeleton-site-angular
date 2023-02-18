@@ -1,0 +1,78 @@
+<div class="container-internal acoes-page" *ngIf="routePage">
+    <div class="acoes-page__title">
+        <h2 class="main-title">{{ routePage.title }}</h2>
+    </div>
+    <p *ngIf="routePage.options.length !== 0">Selecione uma das opções abaixo.</p>
+
+    <section *ngFor="let item of routePage.options" class="acoes-page__primary-link">
+        <form
+            *ngIf="item.action"
+            class="acoes-page__primary-link__item"
+            [method]="item.method"
+            [action]="getUrlPortal(item.action)"
+        >
+            <ng-container *ngIf="item.hiddenInputs">
+                <input
+                    type="hidden"
+                    *ngFor="let input of item.hiddenInputs"
+                    [id]="input.id"
+                    [name]="input.id"
+                    [value]="input.value"
+                />
+            </ng-container>
+            <ng-container *ngIf="state">
+                <input
+                    type="hidden"
+                    *ngFor="let input of state"
+                    [id]="input.id"
+                    [name]="input.id"
+                    [value]="input.value"
+                />
+            </ng-container>
+            <button class="d-none" type="submit" [id]="idGen(item.label)"></button>
+            <span class="br-divider sm"></span>
+        </form>
+
+        <div *ngIf="item.link" class="acoes-page__primary-link__item">
+            <a [href]="getUrlPortal(item.link)" [id]="idGen(item.label)" class="d-none"></a>
+            <span class="br-divider sm"></span>
+        </div>
+        <div *ngIf="item.router" class="acoes-page__primary-link__item">
+            <a
+                [routerLink]="item.router"
+                [state]="{ state: item.hiddenInputs || state }"
+                class="acoes-page__primary-link__item__linkAcao"
+                [id]="idGen(item.label)"
+                >{{ item.label }} <i class="fas fa-chevron-right"></i
+            ></a>
+            <span class="br-divider sm"></span>
+        </div>
+        <div *ngIf="item.assetsSigfacil" class="acoes-page__primary-link__item">
+            <a
+                [routerLink]="'/view'"
+                [queryParams]="{ path: item.assetsSigfacil }"
+                class="acoes-page__primary-link__item__linkAcao"
+                [id]="idGen(item.label)"
+                >{{ item.label }}<i class="fas fa-chevron-right"></i>
+            </a>
+            <span class="br-divider sm"></span>
+        </div>
+
+        <i
+            *ngIf="item.helpdesk"
+            class="far fa-question-circle acoes-page__primary-link__question-icon"
+            (click)="modalMsg = item.helpdesk"
+        ></i>
+    </section>
+    <section *ngIf="routePage.options.length === 0">
+        <div class="br-message warning" role="alert">
+            <div class="icon"><i class="fas fa-exclamation-triangle fa-lg" aria-hidden="true"></i></div>
+            <div class="content">
+                <strong>Atenção.</strong><span> Ações não disponíveis para essa UF ou ambiente.</span>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="d-flex justify-content-end">
+    <button backButton><i class="fas fa-chevron-left mr-2"></i> VOLTAR</button>
+</div>

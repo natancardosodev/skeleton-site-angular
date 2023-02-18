@@ -25,7 +25,7 @@ html {
 }
 
 body {
-    font-family: 'Eczar', sans-serif;
+    font-family: Eczar, sans-serif;
     font-weight: 400;
 }
 
@@ -35,39 +35,40 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Eczar', sans-serif;
+    font-family: Eczar, sans-serif;
 }
 
 h2 {
-    font-family: 'Eczar', sans-serif;
+    font-family: Eczar, sans-serif;
     font-size: 26px;
     font-weight: 700;
-    padding: 0;
-    margin: 56px 0 24px -1.883px;
-    text-align: left;
-    line-height: 34.5px;
     letter-spacing: -0.45px;
+    line-height: 34.5px;
+    margin: 56px 0 24px -1.883px;
+    padding: 0;
+    text-align: left;
 }
 
 p {
-    font-family: 'Gentium Basic', serif;
-    margin-top: 21px;
+    font-family: Gentium Basic, serif;
     font-size: 21px;
     letter-spacing: -0.03px;
     line-height: 1.58;
+    margin-top: 21px;
 }
 
 a {
-    color: brown;
+    color: #a52a2a;
     text-decoration: none;
+
     &:hover {
         font-weight: bold;
     }
 }
 
 .footer {
-    color: white;
     background-color: #d0bcab;
+    color: #ffffff;
     padding: 24px;
 }
 
@@ -75,7 +76,9 @@ a {
     margin: 0 auto;
     max-width: 650px;
     padding: 0 24px;
+
     &__text {
+
         &::first-letter {
             font-size: 32px;
         }
@@ -85,6 +88,7 @@ a {
 /** 
 * Utils 
 */
+
 .group {
     overflow: hidden;
 }
@@ -98,94 +102,91 @@ a {
 }
 
 .container {
-    position: relative;
-
     display: block;
-    width: 100%;
     height: 100vh;
+    position: relative;
+    width: 100%;
 }
 
 .hero {
-    position: relative;
-
     display: block;
-    width: 100%;
     height: 100vh;
+    position: relative;
+    width: 100%;
 
     &__image {
-        position: absolute;
-
-        width: 100%;
-        height: 100vh;
-
-        clip: rect(0, auto, auto, 0);
-
-        background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409393/codepen/hero.jpg);
         background-attachment: fixed;
+
+        background-image: url('https://res.cloudinary.com/mihael/image/upload/v1548409393/codepen/hero.jpg');
         background-repeat: no-repeat;
         background-size: cover;
 
+        clip: rect(0, auto, auto, 0);
+        height: 100vh;
+        position: absolute;
+
+        width: 100%;
+
         &--overlay {
-            position: absolute;
-            top: 0;
-            right: 0;
+            background: linear-gradient(to bottom,
+            rgba(121, 85, 72, 0) 0%,
+            rgba(121, 85, 72, 0.17) 21%,
+            rgba(121, 85, 72, 0.5) 80%);
             bottom: 0;
             left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
             z-index: 1;
-
-            background: linear-gradient(
-                to bottom,
-                rgba(121, 85, 72, 0) 0%,
-                rgba(121, 85, 72, 0.17) 21%,
-                rgba(121, 85, 72, 0.5) 80%
-            );
         }
     }
+
     &__child {
-        position: fixed;
+        backface-visibility: hidden;
 
         background-repeat: no-repeat;
-        backface-visibility: hidden;
         opacity: 0.8;
+        position: fixed;
 
         &--primary {
-            top: -120px;
+            background-image: url('https://res.cloudinary.com/mihael/image/upload/v1548409393/codepen/cloud-2.png');
+            height: 1621px;
             left: 50px;
+            top: -120px;
 
             width: 819px;
-            height: 1621px;
-
-            background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409393/codepen/cloud-2.png);
         }
-        &--secondary {
-            top: 0;
-            right: 50px;
 
-            width: 300px;
-            height: 500px;
+        &--secondary {
+            background-image: url('https://res.cloudinary.com/mihael/image/upload/v1548409392/codepen/cloud-1.png');
 
             background-size: 300px auto;
-            background-image: url(https://res.cloudinary.com/mihael/image/upload/v1548409392/codepen/cloud-1.png);
+            height: 500px;
+            right: 50px;
+            top: 0;
+
+            width: 300px;
         }
     }
-    &__title {
-        position: absolute;
-        bottom: 18vh;
-        left: 24vw;
-        right: 24vw;
-        z-index: 1;
 
-        opacity: 0;
+    &__title {
+        bottom: 18vh;
+
+        color: #ffffff;
+
+        font-family: Eczar, sans-serif;
 
         font-size: calc(6px * 10);
+        font-weight: 200;
+        left: 24vw;
         line-height: calc(6px * 12);
 
-        color: white;
-
-        font-family: 'Eczar', sans-serif;
-        font-weight: 200;
+        opacity: 0;
+        position: absolute;
+        right: 24vw;
 
         text-align: center;
+        z-index: 1;
 
         @media screen and (min-width: 768px) {
             bottom: 15vh;
@@ -193,17 +194,18 @@ a {
             line-height: calc(6px * 18);
         }
     }
+
     &__subtitle {
-        position: absolute;
         bottom: 15vh;
-        left: 24vw;
-        right: 24vw;
 
-        color: white;
+        color: #ffffff;
 
-        font-family: 'Gentium Basic', serif;
+        font-family: Gentium Basic, serif;
         font-size: 24px;
+        left: 24vw;
         line-height: 32px;
+        position: absolute;
+        right: 24vw;
         text-align: center;
     }
 }
@@ -213,17 +215,21 @@ a {
 */
 
 .animation {
+
     &--floating {
-        animation-name: floating;
         animation-duration: 200000ms;
         animation-iteration-count: infinite;
+        animation-name: floating;
     }
+
     &--title-in {
         animation: title-in 800ms forwards ease-in-out 750ms;
     }
+
     &--from-top {
         animation: from-top 350ms forwards cubic-bezier(0.65, 0.05, 0.36, 1);
     }
+
     &--from-bottom {
         animation: from-bottom 350ms forwards cubic-bezier(0.65, 0.05, 0.36, 1);
     }
@@ -233,50 +239,59 @@ a {
 * Keyframes for specific animation
 */
 @keyframes floating {
+
     0% {
         transform: translateY(0%);
     }
+
     50% {
         transform: translateY(50%);
     }
+
     100% {
         transform: translateY(0%);
     }
 }
 
 @keyframes title-in {
+
     0% {
-        visibility: hidden;
         opacity: 0;
         transform: translateY(-25%);
+        visibility: hidden;
     }
+
     100% {
         opacity: 1;
-        visibility: visible;
         transform: translateY(0);
+        visibility: visible;
     }
 }
 @keyframes from-top {
+
     0% {
-        visibility: hidden;
         opacity: 0;
         transform: translateY(-30%);
+        visibility: hidden;
     }
+
     100% {
         opacity: 1;
-        visibility: visible;
         transform: translateY(0);
+        visibility: visible;
     }
 }
 @keyframes from-bottom {
+
     0% {
-        visibility: hidden;
         opacity: 0;
         transform: translateY(15%);
+        visibility: hidden;
     }
+
     100% {
         opacity: 1;
-        visibility: visible;
         transform: translateY(0);
+        visibility: visible;
     }
 }
