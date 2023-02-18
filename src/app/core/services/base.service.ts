@@ -4,11 +4,12 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-import { cleanParams, isNullOrUndefined, throwErrorAPI } from '@core/utils/generals.util';
+import { catchErrorApi, cleanParams, isNullOrUndefined, throwErrorAPI } from '@core/utils/generals.util';
 
 import { UrlUtilService } from './url-util.service';
 import { IHttpOptions } from '@core/interfaces/sistema/http-options.interface';
 import { MensagensEnum } from '@core/enums/sistema/mensagens.enum';
+import { TiposApisEnum } from '@core/enums/sistema/tipo-apis.enum';
 
 export abstract class BaseService {
     private _baseUrl!: string;
@@ -59,15 +60,16 @@ export abstract class BaseService {
 
     get = (
         url: string,
-        params?: Record<string, any>,
-        tipoApi?: string,
+        params?: any,
+        tipoApi?: TiposApisEnum,
         isHideAlert?: boolean,
         customOptions?: IHttpOptions
     ): Observable<any> => {
         return this.sendRequest(this.getUrl(url, tipoApi), 'get', params, null, tipoApi, customOptions).pipe(
             take(1),
             catchError((erro: HttpErrorResponse) => {
-                isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
+                this.showMessageError(catchErrorApi(erro, isHideAlert));
+
                 return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
@@ -75,15 +77,16 @@ export abstract class BaseService {
 
     post = (
         url: string,
-        body?: Record<string, any>,
-        tipoApi?: string,
+        body?: any,
+        tipoApi?: TiposApisEnum,
         isHideAlert?: boolean,
         customOptions?: IHttpOptions
     ): Observable<any> => {
         return this.sendRequest(this.getUrl(url, tipoApi), 'post', null, body, tipoApi, customOptions).pipe(
             take(1),
             catchError((erro: HttpErrorResponse) => {
-                isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
+                this.showMessageError(catchErrorApi(erro, isHideAlert));
+
                 return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
@@ -92,14 +95,15 @@ export abstract class BaseService {
     put = (
         url: string,
         body?: any,
-        tipoApi?: string,
+        tipoApi?: TiposApisEnum,
         isHideAlert?: boolean,
         customOptions?: IHttpOptions
     ): Observable<any> => {
         return this.sendRequest(this.getUrl(url, tipoApi), 'put', null, body, tipoApi, customOptions).pipe(
             take(1),
             catchError((erro: HttpErrorResponse) => {
-                isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
+                this.showMessageError(catchErrorApi(erro, isHideAlert));
+
                 return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
@@ -107,21 +111,22 @@ export abstract class BaseService {
 
     delete = (
         url: string,
-        params?: Record<string, string>,
-        tipoApi?: string,
+        params?: Record<string, string> | any,
+        tipoApi?: TiposApisEnum,
         isHideAlert?: boolean,
         customOptions?: IHttpOptions
     ): Observable<any> => {
         return this.sendRequest(this.getUrl(url, tipoApi), 'delete', params, null, tipoApi, customOptions).pipe(
             take(1),
             catchError((erro: HttpErrorResponse) => {
-                isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
+                this.showMessageError(catchErrorApi(erro, isHideAlert));
+
                 return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
     };
 
-    uploadArquivo = (url: string, body?: any, tipoApi?: string, isHideAlert?: boolean): Observable<any> => {
+    uploadArquivo = (url: string, body?: any, tipoApi?: TiposApisEnum, isHideAlert?: boolean): Observable<any> => {
         const options: IHttpOptions = {
             withCredentials: true,
             responseType: 'json',
@@ -130,17 +135,18 @@ export abstract class BaseService {
         return this.http.request('post', this.getUrl(url, tipoApi), options).pipe(
             take(1),
             catchError((erro: HttpErrorResponse) => {
-                isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
+                this.showMessageError(catchErrorApi(erro, isHideAlert));
+
                 return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );
     };
 
     downloadArquivo = (
-        type: string,
         url: string,
+        type: string,
         body?: any,
-        tipoApi?: string,
+        tipoApi?: TiposApisEnum,
         isHideAlert?: boolean
     ): Observable<any> => {
         this.options = {
@@ -152,7 +158,8 @@ export abstract class BaseService {
         return this.http.request(type, this.getUrl(url, tipoApi), this.options).pipe(
             take(1),
             catchError((erro: HttpErrorResponse) => {
-                isHideAlert ? null : this.showMessageError(erro.status === 0 ? this._msgApiFora : erro.error);
+                this.showMessageError(catchErrorApi(erro, isHideAlert));
+
                 return isHideAlert ? throwErrorAPI(erro.error) : throwErrorAPI();
             })
         );

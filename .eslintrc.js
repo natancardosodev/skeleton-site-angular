@@ -12,15 +12,17 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
-        'plugin:prettier/recommended'
+        'plugin:prettier/recommended',
+        'prettier'
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: 'tsconfig.json',
+        project: './tsconfig.json',
+        tsconfigRootDir: __dirname,
         ecmaVersion: 2020,
         sourceType: 'module',
         warnOnUnsupportedTypeScriptVersion: false,
-        extraFileExtensions: ['html', 'scss']
+        extraFileExtensions: ['.html', '.scss']
     },
     plugins: ['@typescript-eslint'],
     rules: {
@@ -72,7 +74,13 @@ module.exports = {
                 ignoreStatic: true
             }
         ],
-        '@typescript-eslint/quotes': ['error', 'single'],
+        '@typescript-eslint/quotes': [
+            'error',
+            'single',
+            {
+                avoidEscape: true
+            }
+        ],
         '@typescript-eslint/semi': ['error', 'always'],
         'no-console': ['error'],
         'no-trailing-spaces': 'error',

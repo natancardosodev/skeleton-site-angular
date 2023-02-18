@@ -1,0 +1,23 @@
+<ng-container #container></ng-container>
+
+<div class="container-internal basic-page-class--loader" *ngIf="isLoading">
+    <div class="basic-page-class--title">
+        <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+    </div>
+    <div class="basic-page-class--sub-title">
+        <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+    </div>
+    <div class="basic-page-class--text">
+        <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+    </div>
+    <div class="basic-page-class--sub-title">
+        <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+    </div>
+    <div class="basic-page-class--text">
+        <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+    </div>
+</div>
+
+<div class="d-flex justify-content-end">
+    <button backButton><i class="fas fa-chevron-left mr-2"></i> VOLTAR</button>
+</div>

@@ -14,7 +14,7 @@ export function getDateTime(): string {
  * @returns YYYY-MM-DDTHH:mm:ss+00:00
  */
 export function getDateTimeUTC(date = null): string {
-    const objDate = date ? new Date(date) : new Date();
+    const objDate = date ? new Date(date as string) : new Date();
     const utc = objDate.toString().split('-')[1];
 
     return (

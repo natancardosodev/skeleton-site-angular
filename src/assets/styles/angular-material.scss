@@ -8,14 +8,12 @@ $theme-primary: mat.define-palette(mat.$teal-palette);
 $theme-accent: mat.define-palette(mat.$teal-palette);
 $theme-warn: mat.define-palette(mat.$red-palette);
 
-$theme: mat.define-light-theme(
-    (
-        color: (
-            primary: $theme-primary,
-            accent: $theme-accent,
-            warn: $theme-warn
-        )
+$theme: mat.define-light-theme((
+    color: (
+        primary: $theme-primary,
+        accent: $theme-accent,
+        warn: $theme-warn
     )
-);
+));
 
 @include mat.all-component-themes($theme);
